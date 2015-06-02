@@ -15,7 +15,9 @@
 /**
  *  animator object for presentation transition
  */
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                 presentingController:(UIViewController *)presenting
+                                                                     sourceController:(UIViewController *)source
 {
     DEAnimatedTransition* presentAnimator = nil;
     presentAnimator =  [DEAnimatedTransition new];

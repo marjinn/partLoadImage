@@ -12,12 +12,14 @@
 #import <ImageIO/ImageIO.h>
 #import "ToPresentViewController.h"
 #import "DETransitioningDelegate.h"
+#import "DENavConTransitionDelegate.h"
 
 
 @interface LayerTrialsVC ()
 {
     id r_3_3;
     id <UIViewControllerTransitioningDelegate> transitioningDelegate;
+    id <UINavigationControllerDelegate> navConTransitioningDelegate;
 }
 @property(nonatomic,weak)IBOutlet UIView* layerView;
 
@@ -394,8 +396,8 @@
     toPresent =  [ToPresentViewController new];
     self->r_3_3 = toPresent;
     
-    [[NSThread mainThread] threadDictionary][@"ToPresentViewController"] =
-    toPresent;
+//    [[NSThread mainThread] threadDictionary][@"ToPresentViewController"] =
+//    toPresent;
     
     //set its presentation and transition style
     toPresent.modalPresentationCapturesStatusBarAppearance = YES;
@@ -414,7 +416,25 @@
     
     toPresent.transitioningDelegate = transitionDelegate;
     
-    [self presentViewController:toPresent animated:YES completion:nil];
+    //[self presentViewController:toPresent animated:YES completion:nil];
+    
+    
+    
+    /**
+     *  Navigation Controller based transition
+     */
+    
+    id<UINavigationControllerDelegate> navConDelegate = [DENavConTransitionDelegate new];
+    
+    self->navConTransitioningDelegate = navConDelegate;
+    
+    [self.navigationController setDelegate:navConDelegate];
+    
+    [[self navigationController] pushViewController:toPresent animated:YES];
+    
+    
+    
+    
 }
 
 

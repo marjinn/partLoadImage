@@ -42,7 +42,7 @@
      ^{
                                  NSLog(@"dismissed : %@",self);
                                  
-                                 [[[NSThread mainThread] threadDictionary] removeObjectForKey:@"ToPresentViewController"];
+                                 //[[[NSThread mainThread] threadDictionary] removeObjectForKey:@"ToPresentViewController"];
          
      }];
 }

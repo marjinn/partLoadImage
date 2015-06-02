@@ -10,7 +10,7 @@
 @import UIKit;
 
 /**
- *  fcailiates the transition for present / dismiss
+ *  facilitates the transition for present / dismiss
  */
 @interface DETransitioningDelegate : NSObject <UIViewControllerTransitioningDelegate>
 

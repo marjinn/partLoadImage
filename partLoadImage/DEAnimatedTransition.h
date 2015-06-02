@@ -11,7 +11,7 @@
 
 
 /**
- *  CLass that implments the animation--- aka the naimator object
+ *  CLass that implments the animation--- aka the animator object
  */
 
 

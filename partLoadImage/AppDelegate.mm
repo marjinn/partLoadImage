@@ -35,7 +35,10 @@
     LayerTrialsVC* rootVc = nil;
     rootVc = [[LayerTrialsVC alloc]init];
     
-    self.window.rootViewController = rootVc;
+    UINavigationController* navCon = nil;
+    navCon = [[UINavigationController alloc] initWithRootViewController:rootVc];
+    
+    self.window.rootViewController = navCon;
     
     [[self window]makeKeyAndVisible];
     

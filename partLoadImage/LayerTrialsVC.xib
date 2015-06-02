@@ -15,10 +15,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlq-fC-wkf">
-                    <rect key="frame" x="8" y="8" width="150" height="146"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhX-a9-s6V" customClass="TrimInCircleView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,6 +34,13 @@
                         <action selector="customTransiton:" destination="-1" eventType="touchUpInside" id="ban-hY-y61"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlq-fC-wkf">
+                    <rect key="frame" x="8" y="8" width="150" height="146"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="8" y="61" width="150" height="146"/>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <variation key="default">
@@ -52,6 +55,7 @@
                     <include reference="uMG-T7-dx9"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="498" y="-178"/>
         </view>
     </objects>
 </document>

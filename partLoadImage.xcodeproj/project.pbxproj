@@ -11,6 +11,7 @@
 		28289B9B1B1C5EC1006C9C7F /* ToPresentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28289B991B1C5EC0006C9C7F /* ToPresentViewController.xib */; };
 		28289B9E1B1C5FA9006C9C7F /* DETransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28289B9D1B1C5FA9006C9C7F /* DETransitioningDelegate.m */; };
 		28289BA11B1C6158006C9C7F /* DEAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 28289BA01B1C6158006C9C7F /* DEAnimatedTransition.m */; };
+		28289BA41B1DB327006C9C7F /* DENavConTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28289BA31B1DB327006C9C7F /* DENavConTransitionDelegate.m */; };
 		28545B0D1ACAAEE300CCCBDB /* CDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 28545B0C1ACAAEE300CCCBDB /* CDraw.m */; };
 		286F5B021B0B47E500C7BF9D /* Dtraustrop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 286F5B001B0B47E500C7BF9D /* Dtraustrop.cpp */; };
 		28EA91711ABBF96700BD9165 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EA91701ABBF96700BD9165 /* main.m */; };
@@ -43,6 +44,8 @@
 		28289B9D1B1C5FA9006C9C7F /* DETransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETransitioningDelegate.m; sourceTree = "<group>"; };
 		28289B9F1B1C6158006C9C7F /* DEAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEAnimatedTransition.h; sourceTree = "<group>"; };
 		28289BA01B1C6158006C9C7F /* DEAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEAnimatedTransition.m; sourceTree = "<group>"; };
+		28289BA21B1DB327006C9C7F /* DENavConTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DENavConTransitionDelegate.h; sourceTree = "<group>"; };
+		28289BA31B1DB327006C9C7F /* DENavConTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DENavConTransitionDelegate.m; sourceTree = "<group>"; };
 		28545B0B1ACAAEE300CCCBDB /* CDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDraw.h; sourceTree = "<group>"; };
 		28545B0C1ACAAEE300CCCBDB /* CDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDraw.m; sourceTree = "<group>"; };
 		286F5B001B0B47E500C7BF9D /* Dtraustrop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dtraustrop.cpp; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				28289B9D1B1C5FA9006C9C7F /* DETransitioningDelegate.m */,
 				28289B9F1B1C6158006C9C7F /* DEAnimatedTransition.h */,
 				28289BA01B1C6158006C9C7F /* DEAnimatedTransition.m */,
+				28289BA21B1DB327006C9C7F /* DENavConTransitionDelegate.h */,
+				28289BA31B1DB327006C9C7F /* DENavConTransitionDelegate.m */,
 				28EA917B1ABBF96800BD9165 /* Images.xcassets */,
 				28EA917D1ABBF96800BD9165 /* LaunchScreen.xib */,
 				28EA916E1ABBF96600BD9165 /* Supporting Files */,
@@ -288,6 +293,7 @@
 				28289B9A1B1C5EC1006C9C7F /* ToPresentViewController.m in Sources */,
 				28545B0D1ACAAEE300CCCBDB /* CDraw.m in Sources */,
 				286F5B021B0B47E500C7BF9D /* Dtraustrop.cpp in Sources */,
+				28289BA41B1DB327006C9C7F /* DENavConTransitionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
