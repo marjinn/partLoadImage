@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -25,13 +25,19 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bx-zt-yaA" customClass="CDraw">
-                                <rect key="frame" x="16" y="354" width="568" height="226"/>
+                                <rect key="frame" x="16" y="413" width="568" height="167"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNF-S9-Uic">
+                                <rect key="frame" x="268" y="366" width="65" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1Bx-zt-yaA" firstAttribute="top" secondItem="0wj-uX-fox" secondAttribute="bottom" constant="8" id="25e-0m-ylD"/>
+                            <constraint firstItem="1Bx-zt-yaA" firstAttribute="top" secondItem="0wj-uX-fox" secondAttribute="bottom" constant="67" id="25e-0m-ylD"/>
                             <constraint firstItem="0wj-uX-fox" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9h0-rj-1j8"/>
                             <constraint firstItem="1Bx-zt-yaA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FaZ-lW-SVO"/>
                             <constraint firstAttribute="bottom" secondItem="1Bx-zt-yaA" secondAttribute="bottom" constant="20" symbolic="YES" id="NBw-HS-4gb"/>

@@ -34,4 +34,22 @@
 }
 */
 
+
+-(IBAction)dismiss:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES
+                             completion:
+     ^{
+                                 NSLog(@"dismissed : %@",self);
+                                 
+                                 [[[NSThread mainThread] threadDictionary] removeObjectForKey:@"ToPresentViewController"];
+         
+     }];
+}
+
+-(void)dealloc
+{
+    
+}
+
 @end

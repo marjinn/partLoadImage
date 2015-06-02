@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28289B9A1B1C5EC1006C9C7F /* ToPresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28289B981B1C5EC0006C9C7F /* ToPresentViewController.m */; };
+		28289B9B1B1C5EC1006C9C7F /* ToPresentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28289B991B1C5EC0006C9C7F /* ToPresentViewController.xib */; };
+		28289B9E1B1C5FA9006C9C7F /* DETransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28289B9D1B1C5FA9006C9C7F /* DETransitioningDelegate.m */; };
+		28289BA11B1C6158006C9C7F /* DEAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 28289BA01B1C6158006C9C7F /* DEAnimatedTransition.m */; };
 		28545B0D1ACAAEE300CCCBDB /* CDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 28545B0C1ACAAEE300CCCBDB /* CDraw.m */; };
 		286F5B021B0B47E500C7BF9D /* Dtraustrop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 286F5B001B0B47E500C7BF9D /* Dtraustrop.cpp */; };
 		28EA91711ABBF96700BD9165 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EA91701ABBF96700BD9165 /* main.m */; };
@@ -32,6 +36,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28289B971B1C5EC0006C9C7F /* ToPresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToPresentViewController.h; sourceTree = "<group>"; };
+		28289B981B1C5EC0006C9C7F /* ToPresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToPresentViewController.m; sourceTree = "<group>"; };
+		28289B991B1C5EC0006C9C7F /* ToPresentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToPresentViewController.xib; sourceTree = "<group>"; };
+		28289B9C1B1C5FA9006C9C7F /* DETransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DETransitioningDelegate.h; sourceTree = "<group>"; };
+		28289B9D1B1C5FA9006C9C7F /* DETransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DETransitioningDelegate.m; sourceTree = "<group>"; };
+		28289B9F1B1C6158006C9C7F /* DEAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEAnimatedTransition.h; sourceTree = "<group>"; };
+		28289BA01B1C6158006C9C7F /* DEAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEAnimatedTransition.m; sourceTree = "<group>"; };
 		28545B0B1ACAAEE300CCCBDB /* CDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDraw.h; sourceTree = "<group>"; };
 		28545B0C1ACAAEE300CCCBDB /* CDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDraw.m; sourceTree = "<group>"; };
 		286F5B001B0B47E500C7BF9D /* Dtraustrop.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dtraustrop.cpp; sourceTree = "<group>"; };
@@ -102,6 +113,13 @@
 				28FD078F1AF773CA00E60963 /* LayerTrialsVC.h */,
 				28FD07901AF773CA00E60963 /* LayerTrialsVC.m */,
 				28FD07911AF773CA00E60963 /* LayerTrialsVC.xib */,
+				28289B971B1C5EC0006C9C7F /* ToPresentViewController.h */,
+				28289B981B1C5EC0006C9C7F /* ToPresentViewController.m */,
+				28289B991B1C5EC0006C9C7F /* ToPresentViewController.xib */,
+				28289B9C1B1C5FA9006C9C7F /* DETransitioningDelegate.h */,
+				28289B9D1B1C5FA9006C9C7F /* DETransitioningDelegate.m */,
+				28289B9F1B1C6158006C9C7F /* DEAnimatedTransition.h */,
+				28289BA01B1C6158006C9C7F /* DEAnimatedTransition.m */,
 				28EA917B1ABBF96800BD9165 /* Images.xcassets */,
 				28EA917D1ABBF96800BD9165 /* LaunchScreen.xib */,
 				28EA916E1ABBF96600BD9165 /* Supporting Files */,
@@ -222,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28EA91951ABC008700BD9165 /* trial.jpg in Resources */,
+				28289B9B1B1C5EC1006C9C7F /* ToPresentViewController.xib in Resources */,
 				28EA917A1ABBF96800BD9165 /* Main.storyboard in Resources */,
 				28EA917F1ABBF96800BD9165 /* LaunchScreen.xib in Resources */,
 				28FD07931AF773CA00E60963 /* LayerTrialsVC.xib in Resources */,
@@ -260,10 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28289BA11B1C6158006C9C7F /* DEAnimatedTransition.m in Sources */,
 				28EA91771ABBF96700BD9165 /* ViewController.m in Sources */,
+				28289B9E1B1C5FA9006C9C7F /* DETransitioningDelegate.m in Sources */,
 				28EA91741ABBF96700BD9165 /* AppDelegate.mm in Sources */,
 				28EA91711ABBF96700BD9165 /* main.m in Sources */,
 				28FD07921AF773CA00E60963 /* LayerTrialsVC.m in Sources */,
+				28289B9A1B1C5EC1006C9C7F /* ToPresentViewController.m in Sources */,
 				28545B0D1ACAAEE300CCCBDB /* CDraw.m in Sources */,
 				286F5B021B0B47E500C7BF9D /* Dtraustrop.cpp in Sources */,
 			);

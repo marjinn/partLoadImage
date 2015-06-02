@@ -10,10 +10,18 @@
 #import <QuartzCore/QuartzCore.h>
 #import <libkern/OSAtomic.h>
 #import <ImageIO/ImageIO.h>
+#import "ToPresentViewController.h"
+#import "DETransitioningDelegate.h"
+
 
 @interface LayerTrialsVC ()
-
+{
+    id r_3_3;
+    id <UIViewControllerTransitioningDelegate> transitioningDelegate;
+}
 @property(nonatomic,weak)IBOutlet UIView* layerView;
+
+
 
 @end
 
@@ -378,6 +386,42 @@
     return imageView;
 }
 
+-(IBAction)customTransiton:(id)sender
+{
+    
+    //http://www.objc.io/issue-5/view-controller-transitions.html
+    ToPresentViewController* toPresent = nil;
+    toPresent =  [ToPresentViewController new];
+    self->r_3_3 = toPresent;
+    
+    [[NSThread mainThread] threadDictionary][@"ToPresentViewController"] =
+    toPresent;
+    
+    //set its presentation and transition style
+    toPresent.modalPresentationCapturesStatusBarAppearance = YES;
+    toPresent.modalPresentationStyle = UIModalPresentationCustom;
+    //toPresent.modalTransitionStyle =
+    
+    /**
+     *  delegate will not be retained by the ViewController 
+     *  retain manually
+     */
+    
+    id<UIViewControllerTransitioningDelegate> transitionDelegate =
+    [DETransitioningDelegate new];
+    
+    self->transitioningDelegate = transitionDelegate;
+    
+    toPresent.transitioningDelegate = transitionDelegate;
+    
+    [self presentViewController:toPresent animated:YES completion:nil];
+}
+
+
+- (void)dealloc
+{
+    
+}
 
 
 @end
@@ -594,6 +638,12 @@
 //    CGContextRestoreGState(context);
     
 }
+
+
+
+
+
+
 
 @end
 

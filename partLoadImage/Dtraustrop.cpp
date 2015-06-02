@@ -467,17 +467,17 @@ struct F_arg_pass
 };
 
 
-void threadCall (void)
-{
-    vector<double> some_vec = {1,2,3,4,5,6,7,8,9};
-    vector<double> vec2 =   {10,11,12,13,14};
-    
-    thread t1 {f_to_passing_arg,(some_vec)};
-    thread t2 {F_arg_pass(vec2)};
-    
-    t1.join();
-    t2.join();
-}
+//void threadCall (void)
+//{
+//    vector<double> some_vec = {1,2,3,4,5,6,7,8,9};
+//    vector<double> vec2 =   {10,11,12,13,14};
+//    
+//    thread t1 {f_to_passing_arg,(some_vec)};
+//    thread t2 {F_arg_pass(vec2)};
+//    
+//    t1.join();
+//    t2.join();
+//}
 
 
 
@@ -487,12 +487,12 @@ int mainCall (void)
 {
     
     
-    std::thread t1 {_f_};
-    
-    std::thread t2 {FF()};
-    
-    t1.join();
-    t2.join();
+//    std::thread t1 {_f_};
+//    
+//    std::thread t2 {FF()};
+//    
+//    t1.join();
+//    t2.join();
     
     
     

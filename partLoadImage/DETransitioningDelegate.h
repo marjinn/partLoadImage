@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit;
 
-@interface DETransitioningDelegate : NSObject
+/**
+ *  fcailiates the transition for present / dismiss
+ */
+@interface DETransitioningDelegate : NSObject <UIViewControllerTransitioningDelegate>
 
 @end
