@@ -8,7 +8,7 @@
 
 #import "DENavConTransitionDelegate.h"
 #import "DEAnimatedTransition.h"
-
+#import "DEInteractiveTransitionDelegate.h"
 
 
 @interface DENavConTransitionDelegate()
@@ -37,6 +37,12 @@
 
 }
 
+-(id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                        interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
+{
+    
 
+    return self.interactivePopTransition;
+}
 
 @end

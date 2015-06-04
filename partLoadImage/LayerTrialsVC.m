@@ -13,6 +13,7 @@
 #import "ToPresentViewController.h"
 #import "DETransitioningDelegate.h"
 #import "DENavConTransitionDelegate.h"
+#import "DEInteractiveTransitionDelegate.h"
 
 
 @interface LayerTrialsVC ()
@@ -20,6 +21,7 @@
     id r_3_3;
     id <UIViewControllerTransitioningDelegate> transitioningDelegate;
     id <UINavigationControllerDelegate> navConTransitioningDelegate;
+    id <UIViewControllerTransitioningDelegate> interactiveTransitionDelegate;
 }
 @property(nonatomic,weak)IBOutlet UIView* layerView;
 
@@ -108,6 +110,9 @@
     
    
     //UIImage* image = nil;
+    
+    
+    
     
     
 }
@@ -434,7 +439,26 @@
     
     
     
+    /**
+     *  interactive transitioning
+     */
+    id<UIViewControllerTransitioningDelegate> interactivetransitionDelegate =
+    [DEInteractiveTransitionDelegate new];
     
+    self->interactiveTransitionDelegate =
+    interactivetransitionDelegate;
+    
+    ((DEInteractiveTransitionDelegate*)(self->interactiveTransitionDelegate)).interactivePopTransition =
+    [UIPercentDrivenInteractiveTransition new];
+    
+    toPresent.transitioningDelegate = interactivetransitionDelegate;
+    
+    
+    ((DENavConTransitionDelegate*)(self->navConTransitioningDelegate)).interactivePopTransition =
+    ((DEInteractiveTransitionDelegate*)(self->interactiveTransitionDelegate)).interactivePopTransition;
+    
+    
+    //[[self navigationController] pushViewController:toPresent animated:YES];
 }
 
 

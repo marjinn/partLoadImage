@@ -9,7 +9,8 @@
 #import "ToPresentViewController.h"
 
 @interface ToPresentViewController ()
-
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
+@property(nonatomic,strong,readonly) UIScreenEdgePanGestureRecognizer* screenEdgePanGestureRecognizer;
 @end
 
 @implementation ToPresentViewController
@@ -17,6 +18,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    /**
+     *  adding gesture recognizer
+     */
+    UIScreenEdgePanGestureRecognizer* tmp = nil;
+    tmp =
+    [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self
+                                                      action:@selector(handlePopRecognizer:)];
+    
+    self->_screenEdgePanGestureRecognizer = tmp;
+    self->_screenEdgePanGestureRecognizer.edges = UIRectEdgeLeft;
+    
+    [[self view] addGestureRecognizer:tmp];
+}
+
+- (void)handlePopRecognizer:(UIScreenEdgePanGestureRecognizer*)recognizer
+{
+    CGPoint  touchedHere =
+    [recognizer translationInView:[self view]];
+    
+    CGFloat progress =
+    touchedHere.x / ([[self view] bounds].size.width * 1.0f) ;
+    
+    progress = MIN(1.0f, MAX(0.0f, progress));
+    
+    switch ([recognizer state])
+    {
+        case UIGestureRecognizerStateBegan:
+        {
+            [[self navigationController] popViewControllerAnimated:YES];
+           break;
+        }
+        case UIGestureRecognizerStateChanged:
+        {
+            //update transition progres
+            [[self interactivePopTransition]
+             updateInteractiveTransition:progress];
+            break;
+        }
+            case UIGestureRecognizerStateEnded:
+            case UIGestureRecognizerStateCancelled:
+        {
+            
+            if (progress > 0.5)
+            {
+                [[self interactivePopTransition] finishInteractiveTransition];
+            }
+            else
+            {
+                [[self interactivePopTransition] cancelInteractiveTransition];
+            }
+            
+            break;
+        }
+            
+            
+        default:
+            break;
+    }
+    
+    [self setInteractivePopTransition:nil];
 }
 
 - (void)didReceiveMemoryWarning {

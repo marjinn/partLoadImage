@@ -24,6 +24,8 @@
 		28EA91951ABC008700BD9165 /* trial.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28EA91941ABC008700BD9165 /* trial.jpg */; };
 		28FD07921AF773CA00E60963 /* LayerTrialsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD07901AF773CA00E60963 /* LayerTrialsVC.m */; };
 		28FD07931AF773CA00E60963 /* LayerTrialsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FD07911AF773CA00E60963 /* LayerTrialsVC.xib */; };
+		28FF59621B1F08D2006E58A8 /* PercentDrivenTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FF59611B1F08D2006E58A8 /* PercentDrivenTransition.m */; };
+		28FF59651B1F0930006E58A8 /* DEInteractiveTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FF59641B1F0930006E58A8 /* DEInteractiveTransitionDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,10 @@
 		28FD078F1AF773CA00E60963 /* LayerTrialsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerTrialsVC.h; sourceTree = "<group>"; };
 		28FD07901AF773CA00E60963 /* LayerTrialsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerTrialsVC.m; sourceTree = "<group>"; };
 		28FD07911AF773CA00E60963 /* LayerTrialsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LayerTrialsVC.xib; sourceTree = "<group>"; };
+		28FF59601B1F08D2006E58A8 /* PercentDrivenTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PercentDrivenTransition.h; sourceTree = "<group>"; };
+		28FF59611B1F08D2006E58A8 /* PercentDrivenTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PercentDrivenTransition.m; sourceTree = "<group>"; };
+		28FF59631B1F0930006E58A8 /* DEInteractiveTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInteractiveTransitionDelegate.h; sourceTree = "<group>"; };
+		28FF59641B1F0930006E58A8 /* DEInteractiveTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInteractiveTransitionDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,10 @@
 				28289BA01B1C6158006C9C7F /* DEAnimatedTransition.m */,
 				28289BA21B1DB327006C9C7F /* DENavConTransitionDelegate.h */,
 				28289BA31B1DB327006C9C7F /* DENavConTransitionDelegate.m */,
+				28FF59601B1F08D2006E58A8 /* PercentDrivenTransition.h */,
+				28FF59611B1F08D2006E58A8 /* PercentDrivenTransition.m */,
+				28FF59631B1F0930006E58A8 /* DEInteractiveTransitionDelegate.h */,
+				28FF59641B1F0930006E58A8 /* DEInteractiveTransitionDelegate.m */,
 				28EA917B1ABBF96800BD9165 /* Images.xcassets */,
 				28EA917D1ABBF96800BD9165 /* LaunchScreen.xib */,
 				28EA916E1ABBF96600BD9165 /* Supporting Files */,
@@ -286,10 +296,12 @@
 			files = (
 				28289BA11B1C6158006C9C7F /* DEAnimatedTransition.m in Sources */,
 				28EA91771ABBF96700BD9165 /* ViewController.m in Sources */,
+				28FF59651B1F0930006E58A8 /* DEInteractiveTransitionDelegate.m in Sources */,
 				28289B9E1B1C5FA9006C9C7F /* DETransitioningDelegate.m in Sources */,
 				28EA91741ABBF96700BD9165 /* AppDelegate.mm in Sources */,
 				28EA91711ABBF96700BD9165 /* main.m in Sources */,
 				28FD07921AF773CA00E60963 /* LayerTrialsVC.m in Sources */,
+				28FF59621B1F08D2006E58A8 /* PercentDrivenTransition.m in Sources */,
 				28289B9A1B1C5EC1006C9C7F /* ToPresentViewController.m in Sources */,
 				28545B0D1ACAAEE300CCCBDB /* CDraw.m in Sources */,
 				286F5B021B0B47E500C7BF9D /* Dtraustrop.cpp in Sources */,
