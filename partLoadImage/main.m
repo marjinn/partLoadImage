@@ -112,7 +112,60 @@ int main(int argc, char * argv[]) {
     NSLog(@"[[NSMutableArray array] addObject:] Avg. Runtime: %Lf ns", ((long double)timeToExecute/oneNanoSecond));
     
     
+    
     @autoreleasepool {
+        
+       
+        
+        
+        
+        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
+}
+
+/**
+ *  BIG O
+ * O(1)
+ */
+BOOL containsValueAtIndex(int array[], int count, int value, int idx)
+{
+    return ((idx < count) && (array[idx] == value));
+}
+
+/**
+ *  BIG O
+ * O(n)
+ */
+BOOL containsValue(int array[], int count, int value)
+{
+    for (int i = 0; i < count; i++)//O(n) check through every index to find one
+    {
+        if (array[i] == value)
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+/**
+ *  BIG O
+ * O(n2)
+ */
+BOOL containsDuplicateValues(int array[], int count)
+{
+    for (int i = 0; i < count; i++) //O(n)
+    {
+        for (int j = 0; j < count; j++) //O(n)
+        {
+            if ( (i != j) && (array[i] == array[j]))
+            {
+                return YES;
+            }
+        }
+    }
+    
+    return NO;
 }

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import <Foundation/Foundation.h>
 
 @interface partLoadImageTests : XCTestCase
 {
@@ -286,6 +287,104 @@
     
 }
 
+
+-(void)testArrayToSetConversion
+{
+    NSMutableArray* array = [NSMutableArray array];
+    
+    for (NSUInteger i = 0; i < 10000 ; i++)
+    {
+        array[i] =  @(i);
+    }
+    
+    
+    //@[@"a",@"b",@"c",@"d",@"d",@"e"];
+    NSSet* __block set = nil;
+    
+    //[self measureBlock:^{
+        set = [NSSet setWithArray:array];
+    //}];
+    
+    
+//    [self measureBlock:
+//     ^{
+//         __unused BOOL containsObject = [set containsObject:@"e"];
+//     }];
+//
+//    [self measureBlock:
+//     ^{
+//         __unused BOOL containsObject = [array containsObject:@"e"];
+//     }];
+    
+    [self measureBlock:^{
+        __unused BOOL containsObject = [array containsObject:@"e"];
+    }];
+    
+    /**
+     NSARRAy/NSMutableArray
+     */
+    //Fast Operations
+    //indexed actions
+    (void)[array objectAtIndex:0];
+    (void)[array firstObject];
+    (void)[array lastObject];
+    
+    //add/remove at either end
+    [[array mutableCopy] addObject:@(0)];
+    [[array mutableCopy] removeLastObject];
+    
+    //SLow
+    //-- search
+    [array containsObject:@(0)];
+    [array indexOfObject:@(0)];
+    [[array mutableCopy] removeObject:@(0)];
+    //--- Add/Remove at arbitrary indexes
+    [[array mutableCopy] insertObject:@(0) atIndex:0];
+    
+    //Binary search
+    [[array sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2)
+    {
+        
+        if (obj1 < obj2)
+        {
+            return NSOrderedAscending;
+        }
+        else if(obj1 == obj2)
+        {
+            return NSOrderedSame;
+        }
+        else
+        {
+            return NSOrderedDescending;
+        }
+
+    }] indexOfObject:@(0)
+           inSortedRange:NSMakeRange(0, [array count] - 1)
+                 options:NSBinarySearchingFirstEqual
+         usingComparator:^NSComparisonResult(id obj1, id obj2)
+     {
+         if (obj1 < obj2)
+         {
+             return NSOrderedAscending;
+         }
+         else if(obj1 == obj2)
+         {
+             return NSOrderedSame;
+         }
+         else
+         {
+             return NSOrderedDescending;
+         }
+         
+     }];
+    
+    [NSDictionary sharedKeySetForKeys:array];
+    
+    [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsWeakMemory valueOptions:NSPointerFunctionsWeakMemory];
+    
+   
+    
+}
 
 
 @end
