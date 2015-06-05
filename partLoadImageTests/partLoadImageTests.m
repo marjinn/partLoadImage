@@ -384,6 +384,19 @@
     
    
     
+    
+    NSString* text = @"3 + 5 * 4e10";
+    NSExpression* exp =
+    [NSExpression expressionWithFormat:text,nil];
+    NSNumber* result =
+    [exp expressionValueWithObject:nil context:nil];
+    
+    NSLog(@"result: %@", result);
+    
+    NSMutableString* string = [@"😡" mutableCopy];
+    
+    NSLog(@"%hhu",CFStringTransform((__bridge CFMutableStringRef)string, NULL, kCFStringTransformToUnicodeName, NO));
+    
 }
 
 
