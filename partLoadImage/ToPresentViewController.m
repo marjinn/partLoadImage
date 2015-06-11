@@ -11,6 +11,10 @@
 @interface ToPresentViewController ()
 @property (nonatomic, strong) UIPercentDrivenInteractiveTransition *interactivePopTransition;
 @property(nonatomic,strong,readonly) UIScreenEdgePanGestureRecognizer* screenEdgePanGestureRecognizer;
+
+
+@property(nonatomic,weak,readwrite)IBOutlet UIImageView* wtvrV;
+
 @end
 
 @implementation ToPresentViewController
@@ -18,6 +22,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    UIImage* const image =
+    [[UIImage imageNamed:@"trial.jpg"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    
+    
+    NSString* url =
+    @"http://upload.wikimedia.org/wikipedia/commons/c/ca/Triple-Spiral-4turns_green_transparent.png";
+    
+    NSData* data = nil;
+    data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+    
+    UIImage* imageFromWeb = nil;
+    imageFromWeb = [UIImage imageWithData:data scale:1.0f];
+    
+    
+    
+    [[self wtvrV] setImage:image];
+    
+    [[self wtvrV] setImage:[imageFromWeb imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    
     
     /**
      *  adding gesture recognizer

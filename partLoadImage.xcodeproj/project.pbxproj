@@ -26,6 +26,7 @@
 		28FD07931AF773CA00E60963 /* LayerTrialsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28FD07911AF773CA00E60963 /* LayerTrialsVC.xib */; };
 		28FF59621B1F08D2006E58A8 /* PercentDrivenTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FF59611B1F08D2006E58A8 /* PercentDrivenTransition.m */; };
 		28FF59651B1F0930006E58A8 /* DEInteractiveTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FF59641B1F0930006E58A8 /* DEInteractiveTransitionDelegate.m */; };
+		28FF59681B26EA2B006E58A8 /* strauoDe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28FF59661B26EA2A006E58A8 /* strauoDe.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		28FF59611B1F08D2006E58A8 /* PercentDrivenTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PercentDrivenTransition.m; sourceTree = "<group>"; };
 		28FF59631B1F0930006E58A8 /* DEInteractiveTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEInteractiveTransitionDelegate.h; sourceTree = "<group>"; };
 		28FF59641B1F0930006E58A8 /* DEInteractiveTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEInteractiveTransitionDelegate.m; sourceTree = "<group>"; };
+		28FF59661B26EA2A006E58A8 /* strauoDe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = strauoDe.cpp; sourceTree = "<group>"; };
+		28FF59671B26EA2B006E58A8 /* strauoDe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strauoDe.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				28545B0C1ACAAEE300CCCBDB /* CDraw.m */,
 				286F5B001B0B47E500C7BF9D /* Dtraustrop.cpp */,
 				286F5B011B0B47E500C7BF9D /* Dtraustrop.h */,
+				28FF59661B26EA2A006E58A8 /* strauoDe.cpp */,
+				28FF59671B26EA2B006E58A8 /* strauoDe.h */,
 			);
 			path = partLoadImage;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				28FD07921AF773CA00E60963 /* LayerTrialsVC.m in Sources */,
 				28FF59621B1F08D2006E58A8 /* PercentDrivenTransition.m in Sources */,
 				28289B9A1B1C5EC1006C9C7F /* ToPresentViewController.m in Sources */,
+				28FF59681B26EA2B006E58A8 /* strauoDe.cpp in Sources */,
 				28545B0D1ACAAEE300CCCBDB /* CDraw.m in Sources */,
 				286F5B021B0B47E500C7BF9D /* Dtraustrop.cpp in Sources */,
 				28289BA41B1DB327006C9C7F /* DENavConTransitionDelegate.m in Sources */,
@@ -455,6 +461,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = partLoadImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LLVM_LTO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
@@ -471,8 +478,10 @@
 					x86_64,
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				INFOPLIST_FILE = partLoadImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LLVM_LTO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};

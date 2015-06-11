@@ -102,7 +102,8 @@
     NSLog(@"layerCake Avg. Runtime: %Lf ns", ((long double)timeToExecute/oneNanoSecond));
     
     
-    UIImage* const image = [UIImage imageNamed:@"trial.jpg"];
+    UIImage* const image =
+    [[UIImage imageNamed:@"trial.jpg"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     [[self layerView] addSubview:
     [self createACircularImageOfDimensions:[[self layerView] bounds]
