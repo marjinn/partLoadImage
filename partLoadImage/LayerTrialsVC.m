@@ -24,7 +24,7 @@
     id <UIViewControllerTransitioningDelegate> interactiveTransitionDelegate;
 }
 @property(nonatomic,weak)IBOutlet UIView* layerView;
-
+@property(nonatomic,weak)IBOutlet UILabel* marqueeLabel;
 
 
 @end
@@ -45,6 +45,152 @@
         
     }
 }
+
+
+
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    CGFloat originalXPosition = self.marqueeLabel.frame.origin.x;
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.5
+                                     target:self
+                                   selector:@selector(timerFireMethod:)
+                                   userInfo:@{@"originalXPosition" : @(originalXPosition)}
+                                    repeats:YES];
+}
+
+
+- (void)timerFireMethod:(NSTimer *)timer
+{
+ 
+    
+    CGFloat originalX = [[[timer userInfo] objectForKey:@"originalXPosition"] floatValue];
+    
+    
+    if (self.marqueeLabel.frame.origin.x <= 0)
+    {
+        [[self marqueeLabel] setFrame:
+         
+         CGRectMake(self.view.bounds.size.width, self.marqueeLabel.frame.origin.y, self.marqueeLabel.frame.size.width, self.marqueeLabel.frame.size.height)];
+    }
+//
+//    
+//    
+//
+//    
+//    CABasicAnimation* animation = nil;
+//    animation = [CABasicAnimation animation];
+//    animation.keyPath = @"position.x";
+//    animation.fromValue = @(self.marqueeLabel.frame.origin.x);
+//    animation.toValue = @(self.marqueeLabel.frame.origin.x -10) ;
+//    animation.removedOnCompletion = YES;
+//    animation.duration = 0.4f;
+//    animation.delegate = self;
+//    //animation.additive = YES;
+//    //animation.cumulative = YES;
+//    
+//    [[[self marqueeLabel] layer] addAnimation:animation
+//                                       forKey:@"marqueeLabel.position.x.change"];
+//
+//    
+//    [[self marqueeLabel] setFrame:
+//     
+//     CGRectMake(self.marqueeLabel.frame.origin.x - 10, self.marqueeLabel.frame.origin.y, self.marqueeLabel.frame.size.width, self.marqueeLabel.frame.size.height)];
+    
+    
+    //277847
+//    
+//    [UIView animateWithDuration:0.4
+//                          delay:0.1f
+//                        options:UIViewAnimationOptionOverrideInheritedCurve | UIViewAnimationOptionBeginFromCurrentState
+//                     animations:^{
+//                             [[self marqueeLabel] setFrame:
+//                         
+//                              CGRectMake(self.marqueeLabel.frame.origin.x - 10, self.marqueeLabel.frame.origin.y, self.marqueeLabel.frame.size.width, self.marqueeLabel.frame.size.height)];
+//                     } completion:^(BOOL finished) {
+//                         
+//                     }];
+//    
+//    
+
+    
+    // create a CGPath that implements two arcs (a bounce)
+    CGMutablePathRef thePath = CGPathCreateMutable();
+    //CGPathMoveToPoint(thePath,NULL,self.marqueeLabel.frame.origin.x,self.marqueeLabel.frame.origin.y - 10);
+//    CGPathAddCurveToPoint(thePath,NULL,74.0,500.0,
+//                          320.0,500.0,
+//                          320.0,74.0);
+//    CGPathAddCurveToPoint(thePath,NULL,320.0,500.0,
+//                          566.0,500.0,
+//                          566.0,74.0);
+    
+//    
+//    CGPathAddLineToPoint(thePath, NULL, self.marqueeLabel.frame.origin.x - 10, self.marqueeLabel.frame.origin.y);
+//    
+//    CAKeyframeAnimation * theAnimation;
+//    
+//    // Create the animation object, specifying the position property as the key path.
+//    theAnimation=[CAKeyframeAnimation animationWithKeyPath:@"position"];
+//    theAnimation.path=thePath;
+//    theAnimation.duration=0.4;
+//    
+//    // Add the animation to the layer.
+//    [self.marqueeLabel.layer addAnimation:theAnimation forKey:@"position"];
+//    
+//        [[self marqueeLabel] setFrame:
+//    
+//         CGRectMake(self.marqueeLabel.frame.origin.x - 10, self.marqueeLabel.frame.origin.y, self.marqueeLabel.frame.size.width, self.marqueeLabel.frame.size.height)];
+
+    
+   
+//    [CATransaction begin];
+//    
+//    [CATransaction setValue:[NSNumber numberWithFloat:2.0f]
+//                     forKey:kCATransactionAnimationDuration];
+//    
+//    [CATransaction setValue:kCAMediaTimingFunctionEaseInEaseOut forKey:kCATransactionAnimationTimingFunction];
+//    
+//    // Move the layer to a new position
+//            [[self marqueeLabel] setFrame:
+//    
+//             CGRectMake(self.marqueeLabel.frame.origin.x - 10, self.marqueeLabel.frame.origin.y, self.marqueeLabel.frame.size.width, self.marqueeLabel.frame.size.height)];
+//
+//    
+//    
+//    
+//    
+//    [CATransaction commit];
+    
+    
+    CABasicAnimation* fadeAnim = [CABasicAnimation animationWithKeyPath:@"position.x"];
+    fadeAnim.fromValue = [NSNumber numberWithFloat:self.marqueeLabel.frame.origin.x];
+    fadeAnim.toValue = [NSNumber numberWithFloat:self.marqueeLabel.frame.origin.x - 10];
+    fadeAnim.duration = 0.5f;
+    [self.marqueeLabel.layer addAnimation:fadeAnim forKey:@"opacity"];
+    
+    // Change the actual data value in the layer to the final value.
+    //    // Move the layer to a new position
+                [[self marqueeLabel] setFrame:
+    
+                 CGRectMake(self.marqueeLabel.frame.origin.x - 10, self.marqueeLabel.frame.origin.y, self.marqueeLabel.frame.size.width, self.marqueeLabel.frame.size.height)];
+    
+//    if(self.marqueeLabel.layer.opacity == 0.0f)
+//    {
+//        self.marqueeLabel.layer.opacity = 1.0f;
+//    }
+    
+}
+
+//-(void)animationDidStop:(nonnull CAAnimation *)anim finished:(BOOL)flag
+//{
+//        [[self marqueeLabel] setFrame:
+//    
+//        CGRectMake(self.marqueeLabel.frame.origin.x - 10, self.marqueeLabel.frame.origin.y, self.marqueeLabel.frame.size.width, self.marqueeLabel.frame.size.height)];
+//}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

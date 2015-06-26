@@ -14,7 +14,49 @@
 
 int main(int argc, char * argv[]) {
     
+    NSDate* date = [NSDate date];
     
+    NSDate* dateOne = nil;
+    dateOne =
+    [date dateByAddingTimeInterval:100];
+    
+    NSDate* dateTwo = nil;;
+    dateTwo = [date dateByAddingTimeInterval:300];
+
+    NSDate* date3 = nil;;
+    date3 = [date dateByAddingTimeInterval:800];
+    
+    NSDate* date4 = nil;;
+    date4 = [date dateByAddingTimeInterval:1200];
+
+    
+    
+    NSLog(@"%@",
+    
+    [@[date3,dateTwo,date4,dateOne] sortedArrayUsingComparator:^NSComparisonResult(id  __nonnull obj1, id  __nonnull obj2)
+    {
+        return [(NSDate*)obj1 compare:(NSDate *)obj2];
+    }]
+          );
+   
+     NSLog(@"%@",
+    [@[date3,dateTwo,date4,dateOne]sortedArrayWithOptions:NSSortStable usingComparator:^NSComparisonResult(id  __nonnull obj1, id  __nonnull obj2)
+    {
+       return [(NSDate*)obj1 compare:(NSDate *)obj2];
+    }]);
+    
+    
+    NSSortDescriptor* sortDescriptor = nil;
+    sortDescriptor =
+    [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO
+                                 comparator:
+     ^NSComparisonResult(id  __nonnull obj1, id  __nonnull obj2)
+    {
+        return [(NSDate*)obj1 compare:(NSDate *)obj2];
+     }];
+    
+     NSLog(@"%@",
+    [@[date3,dateTwo,date4,dateOne] sortedArrayUsingDescriptors:@[sortDescriptor]]);
     
     
     NSString* string = nil;

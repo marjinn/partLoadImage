@@ -10,5 +10,5 @@
 #define __partLoadImage__strauoDe__
 
 #include <stdio.h>
-
+void callee (void);
 #endif /* defined(__partLoadImage__strauoDe__) */

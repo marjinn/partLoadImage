@@ -191,6 +191,10 @@ Auto-Vectorization LLVM
  
 */
 
+
+#import "strauoDe.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -204,9 +208,10 @@ Auto-Vectorization LLVM
     // Override point for customization after application launch.
     
     
+    //CPP
+    callee();
     
-    
-    mainCall();
+    //mainCall();
     
     
     self.window =
@@ -223,7 +228,11 @@ Auto-Vectorization LLVM
     
     self.window.rootViewController = navCon;
     
-    [[self window]makeKeyAndVisible];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [[self window]makeKeyAndVisible];
+    }];
+    
+    
     
     
    
